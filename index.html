@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StorySprout</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8ef;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #8ac6a3;
+      padding: 45px 20px;
+      color: white;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 0 0 10px;
+    }
+
+    header p {
+      font-size: 20px;
+    }
+
+    .stories {
+      padding: 40px 20px;
+    }
+
+    .story-card {
+      background: white;
+      max-width: 350px;
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .story-card h2 {
+      color: #4f8f6b;
+    }
+
+    button {
+      background: #f4a261;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 30px;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e98d45;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🌱 StorySprout</h1>
+    <p>Listen. Explore. Learn. 🌈</p>
+  </header>
+
+  <section class="stories">
+    <h2>📚 Choose a Story</h2>
+
+    <div class="story-card">
+      <h2>🦆 The Ugly Duckling</h2>
+      <p>Join the little duckling on a magical journey of discovery.</p>
+
+      <button onclick="startStory()">
+        ▶️ Start Story
+      </button>
+    </div>
+  </section>
+
+  <script>
+    function startStory() {
+      alert("Your story is coming soon! 🦆");
+    }
+  </script>
+
+</body>
+</html>
