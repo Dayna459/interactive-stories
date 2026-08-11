@@ -3,61 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <ti<title>TaleTrail</title>
+
+  <title>TaleTrail</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fff8ef;
-      color: #333;
-      text-align: center;
+      background: #fffaf3;
+      color: #34423a;
     }
 
     header {
-      background: #8ac6a3;
-      padding: 45px 20px;
-      color: white;
+      background: #dcefe3;
+      padding: 25px 20px 55px;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
     }
 
-    h1 {
+    .logo {
+      font-size: 34px;
+      font-weight: bold;
+      color: #3d7054;
+      margin-bottom: 35px;
+    }
+
+    .hero {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .hero h1 {
       font-size: 42px;
-      margin: 0 0 10px;
+      margin: 10px 0;
+      color: #315b45;
     }
 
-    header p {
-      font-size: 20px;
+    .hero p {
+      font-size: 19px;
+      line-height: 1.5;
+      color: #53645a;
     }
 
-    .stories {
-      padding: 40px 20px;
+    .main {
+      padding: 35px 20px 60px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      color: #315b45;
+      margin-bottom: 25px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
     }
 
     .story-card {
       background: white;
-      max-width: 350px;
-      margin: 20px auto;
+      border-radius: 25px;
       padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     }
 
-    .story-card h2 {
-      color: #4f8f6b;
+    .story-picture {
+      font-size: 75px;
+      background: #f5eee1;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    .story-card h3 {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #3d7054;
+    }
+
+    .story-card p {
+      color: #68756d;
+      line-height: 1.5;
     }
 
     button {
-      background: #f4a261;
       border: none;
-      padding: 14px 25px;
-      border-radius: 30px;
+      background: #e9a86f;
       color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
       font-size: 17px;
+      font-weight: bold;
       cursor: pointer;
+      margin-top: 10px;
     }
 
     button:hover {
-      background: #e98d45;
+      background: #d99055;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #718078;
+      font-size: 14px;
+    }
+
+    @media (min-width: 650px) {
+      .story-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -65,27 +129,95 @@
 <body>
 
   <header>
-    <h1>🌿 TaleTrail</h1> 
-    <<p>Listen. Explore. Discover. ✨</p>
+
+    <div class="logo">
+      🌿 TaleTrail
+    </div>
+
+    <div class="hero">
+
+      <h1>Where every story becomes an adventure.</h1>
+
+      <p>
+        Listen to wonderful stories, explore magical worlds
+        and discover something new along the way.
+      </p>
+
+    </div>
+
   </header>
 
-  <section class="stories">
-    <h2>📚 Choose a Story</h2>
 
-    <div class="story-card">
-      <h2>🦆 The Ugly Duckling</h2>
-      <p>Join the little duckling on a magical journey of discovery.</p>
+  <main class="main">
 
-      <button onclick="startStory()">
-        ▶️ Start Story
-      </button>
+    <h2 class="section-title">
+      📚 Choose your adventure
+    </h2>
+
+
+    <div class="story-grid">
+
+
+      <div class="story-card">
+
+        <div class="story-picture">
+          🦆
+        </div>
+
+        <h3>The Ugly Duckling</h3>
+
+        <p>
+          Follow a little duckling as he discovers
+          that being different can be something wonderful.
+        </p>
+
+        <button onclick="startStory('The Ugly Duckling')">
+          🎧 Start Story
+        </button>
+
+      </div>
+
+
+      <div class="story-card">
+
+        <div class="story-picture">
+          🐰
+        </div>
+
+        <h3>A New Adventure</h3>
+
+        <p>
+          A brand new TaleTrail adventure is
+          coming soon!
+        </p>
+
+        <button onclick="comingSoon()">
+          ✨ Coming Soon
+        </button>
+
+      </div>
+
+
     </div>
-  </section>
+
+  </main>
+
+
+  <footer>
+    🌿 TaleTrail · Stories to listen to, explore and learn from.
+  </footer>
+
 
   <script>
-    function startStory() {
-      alert("Your story is coming soon! 🦆");
+
+    function startStory(story) {
+      alert("Your " + story + " adventure is coming next! 🦆✨");
     }
+
+    function comingSoon() {
+      alert("This adventure is coming soon! 🌈");
+    }
+
   </script>
 
 </body>
