@@ -13,114 +13,263 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fffaf3;
-      color: #34423a;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f3e9;
+      color: #304b3b;
     }
 
+    /* HEADER */
+
     header {
-      background: #dcefe3;
-      padding: 25px 20px 55px;
+      background: #dfe9dc;
+      padding: 32px 24px 75px;
       text-align: center;
-      border-radius: 0 0 40px 40px;
+      border-radius: 0 0 55px 55px;
     }
 
     .logo {
-      font-size: 34px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
       font-weight: bold;
-      color: #3d7054;
-      margin-bottom: 35px;
+      letter-spacing: -1px;
+      color: #315a43;
+      margin-bottom: 55px;
+    }
+
+    .logo-line {
+      width: 45px;
+      height: 2px;
+      background: #9aaf91;
+      margin: 12px auto 0;
     }
 
     .hero {
-      max-width: 600px;
+      max-width: 720px;
       margin: auto;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin: 10px 0;
-      color: #315b45;
+      font-size: 44px;
+      line-height: 1.12;
+      margin: 0 0 22px;
+      color: #315a43;
+      font-weight: 600;
     }
 
     .hero p {
-      font-size: 19px;
-      line-height: 1.5;
-      color: #53645a;
+      max-width: 580px;
+      margin: auto;
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #617166;
     }
+
+    /* MAIN */
 
     .main {
-      padding: 35px 20px 60px;
-      max-width: 850px;
+      max-width: 1050px;
       margin: auto;
+      padding: 70px 24px 80px;
     }
 
-    .section-title {
+    .section-heading {
       text-align: center;
-      font-size: 28px;
-      color: #315b45;
-      margin-bottom: 25px;
+      margin-bottom: 42px;
     }
+
+    .section-heading h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: #315a43;
+    }
+
+    .section-heading p {
+      font-family: Arial, sans-serif;
+      color: #718076;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* STORY GRID */
 
     .story-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 22px;
+      gap: 30px;
     }
 
     .story-card {
-      background: white;
-      border-radius: 25px;
-      padding: 25px;
+      background: #fffdf8;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(57, 77, 62, 0.08);
+      border: 1px solid #e5e2d7;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(57, 77, 62, 0.12);
+    }
+
+    /* STORY COVER */
+
+    .story-cover {
+      height: 280px;
+      background: #e9eadb;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.02),
+          rgba(49,90,67,0.08)
+        );
+      pointer-events: none;
+    }
+
+    .cover-placeholder {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding: 30px;
+      font-family: Arial, sans-serif;
+      color: #718076;
+      font-size: 14px;
+      letter-spacing: 0.3px;
     }
 
-    .story-picture {
-      font-size: 75px;
-      background: #f5eee1;
-      border-radius: 20px;
-      padding: 25px;
-      margin-bottom: 20px;
+    /* STORY CONTENT */
+
+    .story-content {
+      padding: 30px 30px 32px;
+      text-align: center;
     }
 
-    .story-card h3 {
-      font-size: 24px;
-      margin: 10px 0;
-      color: #3d7054;
+    .story-content h3 {
+      font-size: 27px;
+      font-weight: 600;
+      color: #315a43;
+      margin: 0 0 13px;
     }
 
-    .story-card p {
-      color: #68756d;
-      line-height: 1.5;
+    .story-content p {
+      font-family: Arial, sans-serif;
+      color: #68766d;
+      font-size: 15px;
+      line-height: 1.65;
+      margin: 0 auto 25px;
+      max-width: 390px;
     }
 
-    button {
+    /* BUTTONS */
+
+    .story-button {
+      display: inline-block;
       border: none;
-      background: #e9a86f;
+      background: #58775f;
       color: white;
-      padding: 14px 28px;
+      padding: 13px 28px;
       border-radius: 30px;
-      font-size: 17px;
-      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
       cursor: pointer;
-      margin-top: 10px;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    button:hover {
-      background: #d99055;
+    .story-button:hover {
+      background: #45634d;
+      transform: translateY(-1px);
     }
+
+    .coming-button {
+      background: #a9b7a1;
+    }
+
+    .coming-button:hover {
+      background: #91a28a;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
-      padding: 30px;
-      color: #718078;
-      font-size: 14px;
+      padding: 35px 24px 50px;
+      border-top: 1px solid #e4e1d7;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #78847b;
     }
 
-    @media (min-width: 650px) {
+    .footer-name {
+      color: #58775f;
+      font-weight: 600;
+    }
+
+    /* DESKTOP */
+
+    @media (min-width: 700px) {
+
       .story-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .story-cover {
+        height: 330px;
+      }
+
+      header {
+        padding-top: 40px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 28px 22px 60px;
+      }
+
+      .logo {
+        font-size: 34px;
+        margin-bottom: 45px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .main {
+        padding: 55px 18px 65px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .story-cover {
+        height: 260px;
+      }
+
+      .story-content {
+        padding: 27px 22px 30px;
       }
     }
   </style>
@@ -131,16 +280,19 @@
   <header>
 
     <div class="logo">
-      🌿 TaleTrail
+      TaleTrail
+      <div class="logo-line"></div>
     </div>
 
     <div class="hero">
 
-      <h1>Where every story becomes an adventure.</h1>
+      <h1>
+        Where every story becomes an adventure.
+      </h1>
 
       <p>
-        Listen to wonderful stories, explore magical worlds
-        and discover something new along the way.
+        Listen to wonderful stories, explore new worlds,
+        and discover something along the way.
       </p>
 
     </div>
@@ -150,52 +302,82 @@
 
   <main class="main">
 
-    <h2 class="section-title">
-      📚 Choose your adventure
-    </h2>
+    <div class="section-heading">
+
+      <h2>Choose your story</h2>
+
+      <p>
+        Step into a story and begin your adventure.
+      </p>
+
+    </div>
 
 
     <div class="story-grid">
 
 
-      <div class="story-card">
+      <!-- THE UGLY DUCKLING -->
 
-        <div class="story-picture">
-          🦆
+      <article class="story-card">
+
+        <div class="story-cover">
+
+          <div class="cover-placeholder">
+            Story illustration
+          </div>
+
         </div>
 
-        <h3>The Ugly Duckling</h3>
+        <div class="story-content">
 
-        <p>
-          Follow a little duckling as he discovers
-          that being different can be something wonderful.
-        </p>
+          <h3>The Ugly Duckling</h3>
 
-        <button onclick="startStory('The Ugly Duckling')">
-          🎧 Start Story
-        </button>
+          <p>
+            Follow a little duckling as he discovers
+            that being different can be something wonderful.
+          </p>
 
-      </div>
+          <button
+            class="story-button"
+            onclick="startStory()">
+            Begin the story
+          </button>
 
-
-      <div class="story-card">
-
-        <div class="story-picture">
-          🐰
         </div>
 
-        <h3>A New Adventure</h3>
+      </article>
 
-        <p>
-          A brand new TaleTrail adventure is
-          coming soon!
-        </p>
 
-        <button onclick="comingSoon()">
-          ✨ Coming Soon
-        </button>
+      <!-- COMING SOON -->
 
-      </div>
+      <article class="story-card">
+
+        <div class="story-cover">
+
+          <div class="cover-placeholder">
+            New adventure
+          </div>
+
+        </div>
+
+        <div class="story-content">
+
+          <h3>A New Adventure</h3>
+
+          <p>
+            A brand new TaleTrail story is waiting
+            to be discovered.
+          </p>
+
+          <button
+            class="story-button coming-button"
+            onclick="comingSoon()">
+            Coming soon
+          </button>
+
+        </div>
+
+      </article>
 
 
     </div>
@@ -204,18 +386,22 @@
 
 
   <footer>
-    🌿 TaleTrail · Stories to listen to, explore and learn from.
+
+    <span class="footer-name">TaleTrail</span>
+    &nbsp;·&nbsp;
+    Stories to listen to, explore and learn from.
+
   </footer>
 
 
   <script>
 
-    function startStory(story) {
-      alert("Your " + story + " adventure is coming next! 🦆✨");
+    function startStory() {
+      alert("The Ugly Duckling adventure will be ready soon.");
     }
 
     function comingSoon() {
-      alert("This adventure is coming soon! 🌈");
+      alert("This adventure is coming soon.");
     }
 
   </script>
