@@ -1,314 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>The Ugly Duckling | TaleTrail</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: #f7f3e9;
-      color: #304b3b;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-
-    header {
-      background: #dfe9dc;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .logo {
-      font-size: 30px;
-      font-weight: bold;
-      color: #315a43;
-    }
-
-    .storybook {
-      max-width: 850px;
-      margin: auto;
-      padding: 45px 20px 60px;
-    }
-
-    .story-page {
-      display: none;
-      animation: fadeIn 0.4s ease;
-    }
-
-    .story-page.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .story-title {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .story-title h1 {
-      font-size: 42px;
-      color: #315a43;
-      margin: 0 0 10px;
-    }
-
-    .story-title p {
-      font-family: Arial, sans-serif;
-      color: #718076;
-      margin: 0;
-    }
-
-    .illustration {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      display: block;
-      border-radius: 28px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 25px rgba(57, 77, 62, 0.10);
-    }
-
-    .story-text {
-      background: #fffdf8;
-      border-radius: 25px;
-      padding: 30px;
-      box-shadow: 0 8px 25px rgba(57, 77, 62, 0.07);
-    }
-
-    .story-text p {
-      font-size: 20px;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .progress {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #718076;
-      margin: 25px 0 15px;
-    }
-
-    .navigation {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 25px;
-      gap: 15px;
-    }
-
-    .button {
-      border: none;
-      background: #58775f;
-      color: white;
-      padding: 13px 25px;
-      border-radius: 30px;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    .button.secondary {
-      background: #a9b7a1;
-    }
-
-    .button:hover {
-      opacity: 0.9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #e4e1d7;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #78847b;
-    }
-
-    @media (max-width: 600px) {
-
-      .storybook {
-        padding: 35px 16px 50px;
-      }
-
-      .story-title h1 {
-        font-size: 34px;
-      }
-
-      .illustration {
-        height: 300px;
-        border-radius: 22px;
-      }
-
-      .story-text {
-        padding: 24px;
-      }
-
-      .story-text p {
-        font-size: 18px;
-      }
-
-      .navigation {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <div class="logo">TaleTrail</div>
-  </header>
-
-
-  <main class="storybook">
-
-    <!-- PAGE 1 -->
-
-    <section class="story-page active">
-
-      <div class="story-title">
-        <h1>The Ugly Duckling</h1>
-        <p>An illustrated story</p>
-      </div>
-
-      <img
-        class="illustration"
-        src="duckling.PNG"
-        alt="The Ugly Duckling beside a peaceful pond"
-      >
-
-      <div class="story-text">
-
-        <p>
-          It was beautiful in the country; it was summer-time.
-          The wheat was yellow, the oats were green, and the hay
-          was stacked up in the green meadows. A deep lake lay
-          in the midst of the woods.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- PAGE 2 -->
-
-    <section class="story-page">
-
-      <img
-        class="illustration"
-        src="ugly-duckling-page-2.PNG"
-        alt="The mother duck with her ducklings"
-      >
-
-      <div class="story-text">
-
-        <p>
-          The little ducklings began to hatch one after another.
-          Soon the nest was full of cheerful little ducklings.
-          But one egg was larger than the others, and the mother
-          duck waited patiently for it to hatch.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- PAGE CONTROLS -->
-
-    <div class="progress">
-      <span id="pageNumber">1</span> / 2
-    </div>
-
-    <div class="navigation">
-
-      <button
-        class="button secondary"
-        onclick="previousPage()">
-        Previous
-      </button>
-
-      <button
-        class="button"
-        onclick="nextPage()">
-        Next
-      </button>
-
-    </div>
-
-  </main>
-
-
-  <footer>
-    TaleTrail · Stories to listen to, explore and learn from.
-  </footer>
-
-
-  <script>
-
-    let currentPage = 0;
-
-    const pages = document.querySelectorAll(".story-page");
-    const pageNumber = document.getElementById("pageNumber");
-
-    function showPage(number) {
-
-      pages.forEach(function(page) {
-        page.classList.remove("active");
-      });
-
-      pages[number].classList.add("active");
-
-      pageNumber.textContent = number + 1;
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-
-    function nextPage() {
-
-      if (currentPage < pages.length - 1) {
-        currentPage++;
-        showPage(currentPage);
-      }
-
-    }
-
-    function previousPage() {
-
-      if (currentPage > 0) {
-        currentPage--;
-        showPage(currentPage);
-      }
-
-    }
-
-  </script>
-
-</body>
-</html>
+<!-- PAGE 1 -->
+<img
+    src="duckling.PNG"
+    alt="The little duckling beside the pond"
+    class="story-image"
+>
+
+<!-- PAGE 2 -->
+<img
+    src="Image3.PNG"
+    alt="The duckling with the other ducklings"
+    class="story-image"
+>
+
+<!-- PAGE 3 -->
+<img
+    src="Image4.PNG"
+    alt="The duckling feeling lonely"
+    class="story-image"
+>
+
+<!-- PAGE 4 -->
+<img
+    src="Image5.PNG"
+    alt="The duckling leaving the farm"
+    class="story-image"
+>
+
+<!-- PAGE 5 -->
+<img
+    src="Image6.PNG"
+    alt="The duckling in winter"
+    class="story-image"
+>
+
+<!-- PAGE 6 -->
+<img
+    src="Image7.PNG"
+    alt="The duckling seeing the swans"
+    class="story-image"
+>
