@@ -1,47 +1,572 @@
-<div class="story-page">
-    <img
-        src="duckling.PNG"
-        alt="The little duckling beside the pond"
-        class="story-image"
-    >
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Ugly Duckling | TaleTrail</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f7f3e9;
+    color: #365c48;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+header {
+    background: #dce8d9;
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: 0 0 40px 40px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: bold;
+    color: #315c46;
+}
+
+.logo-line {
+    width: 55px;
+    height: 3px;
+    background: #9eb39a;
+    margin: 12px auto 0;
+}
+
+
+/* STORY */
+
+.story-wrapper {
+    max-width: 900px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.story-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    color: #315c46;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #718276;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+
+/* STORYBOOK */
+
+.storybook {
+    background: #fffdf8;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(60, 80, 60, 0.12);
+}
+
+.story-page {
+    display: none;
+}
+
+.story-page.active {
+    display: block;
+}
+
+
+/* IMAGES */
+
+.story-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+
+/* TEXT */
+
+.story-text {
+    padding: 40px 50px;
+    text-align: center;
+}
+
+.story-text h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #315c46;
+    margin: 0 0 20px;
+}
+
+.story-text p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 19px;
+    line-height: 1.8;
+    color: #65766b;
+}
+
+
+/* CONTROLS */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    gap: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.previous {
+    background: #d8e2d3;
+    color: #42634f;
+}
+
+.listen {
+    background: #e3c8a5;
+    color: #5f4d39;
+}
+
+.next {
+    background: #5d7d68;
+    color: white;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+
+/* PROGRESS */
+
+.progress {
+    text-align: center;
+    color: #718276;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    color: #78847b;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .story-wrapper {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .story-title {
+        font-size: 34px;
+    }
+
+    .story-text {
+        padding: 30px 24px;
+    }
+
+    .story-text h2 {
+        font-size: 27px;
+    }
+
+    .story-text p {
+        font-size: 18px;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        flex: 1;
+        min-width: 100px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+TaleTrail
 </div>
 
-<div class="story-page">
-    <img
-        src="Image3.PNG"
-        alt="The duckling with the other ducklings"
-        class="story-image"
-    >
+<div class="logo-line"></div>
+
+</header>
+
+
+
+<main class="story-wrapper">
+
+
+<h1 class="story-title">
+The Ugly Duckling
+</h1>
+
+<p class="subtitle">
+A story about belonging and discovering who you are.
+</p>
+
+
+
+<div class="storybook">
+
+
+<!-- PAGE 1 -->
+
+<section class="story-page active">
+
+<img
+src="duckling.PNG"
+alt="The little duckling beside the pond"
+class="story-image"
+>
+
+<div class="story-text">
+
+<h2>A Little Duckling</h2>
+
+<p>
+Once upon a time, on a peaceful farm beside a sparkling pond,
+a mother duck waited patiently for her eggs to hatch.
+One by one, the little ducklings appeared.
+But one egg was much larger than the others.
+</p>
+
 </div>
 
-<div class="story-page">
-    <img
-        src="Image4.PNG"
-        alt="The duckling feeling lonely"
-        class="story-image"
-    >
+</section>
+
+
+
+<!-- PAGE 2 -->
+
+<section class="story-page">
+
+<img
+src="Image3.PNG"
+alt="The duckling with the other ducklings"
+class="story-image"
+>
+
+<div class="story-text">
+
+<h2>The Different One</h2>
+
+<p>
+At last, the large egg cracked open.
+Out came a duckling who looked very different from his brothers
+and sisters. He was bigger, greyer and rather clumsy.
+The other animals stared at him.
+</p>
+
 </div>
 
-<div class="story-page">
-    <img
-        src="Image5.PNG"
-        alt="The duckling leaving the farm"
-        class="story-image"
-    >
+</section>
+
+
+
+<!-- PAGE 3 -->
+
+<section class="story-page">
+
+<img
+src="Image4.PNG"
+alt="The duckling being teased by the other ducklings"
+class="story-image"
+>
+
+<div class="story-text">
+
+<h2>Feeling Alone</h2>
+
+<p>
+The little duckling tried his best to fit in,
+but everywhere he went he felt unwelcome.
+The other ducks laughed at him and called him ugly.
+He began to wonder if there was somewhere he truly belonged.
+</p>
+
 </div>
 
-<div class="story-page">
-    <img
-        src="Image6.PNG"
-        alt="The duckling in winter"
-        class="story-image"
-    >
+</section>
+
+
+
+<!-- PAGE 4 -->
+
+<section class="story-page">
+
+<img
+src="Image5.PNG"
+alt="The duckling leaving the farm"
+class="story-image"
+>
+
+<div class="story-text">
+
+<h2>A New Journey</h2>
+
+<p>
+One morning, the duckling decided to leave.
+He travelled through fields and forests,
+searching for a place where he could feel at home.
+The journey was difficult, but he kept going.
+</p>
+
 </div>
 
-<div class="story-page">
-    <img
-        src="Image7.PNG"
-        alt="The duckling seeing the swans"
-        class="story-image"
-    >
+</section>
+
+
+
+<!-- PAGE 5 -->
+
+<section class="story-page">
+
+<img
+src="Image6.PNG"
+alt="The duckling alone during winter"
+class="story-image"
+>
+
+<div class="story-text">
+
+<h2>A Cold Winter</h2>
+
+<p>
+Winter arrived, bringing icy winds and snow.
+The little duckling was alone and frightened.
+He found a quiet place beside a frozen pond
+and dreamed of warmer days.
+</p>
+
 </div>
+
+</section>
+
+
+
+<!-- PAGE 6 -->
+
+<section class="story-page">
+
+<img
+src="Image7.PNG"
+alt="The young swan with the other swans"
+class="story-image"
+>
+
+<div class="story-text">
+
+<h2>You Belong</h2>
+
+<p>
+When spring arrived, the duckling discovered something wonderful.
+He had grown into a beautiful young swan.
+The swans welcomed him into their family,
+and for the first time, he felt completely at home.
+</p>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+
+<button
+class="previous"
+id="previousButton"
+onclick="previousPage()"
+>
+Previous
+</button>
+
+
+<button
+class="listen"
+onclick="listenToPage()"
+>
+Listen
+</button>
+
+
+<button
+class="next"
+id="nextButton"
+onclick="nextPage()"
+>
+Next
+</button>
+
+
+</div>
+
+
+
+<div class="progress">
+
+Page <span id="pageNumber">1</span> of 6
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+TaleTrail · Stories to listen to, explore and discover.
+
+</footer>
+
+
+
+<script>
+
+let currentPage = 0;
+
+const pages =
+document.querySelectorAll(".story-page");
+
+const pageNumber =
+document.getElementById("pageNumber");
+
+const previousButton =
+document.getElementById("previousButton");
+
+const nextButton =
+document.getElementById("nextButton");
+
+
+function showPage(number) {
+
+pages.forEach(function(page) {
+
+page.classList.remove("active");
+
+});
+
+pages[number].classList.add("active");
+
+currentPage = number;
+
+pageNumber.textContent = number + 1;
+
+previousButton.disabled =
+number === 0;
+
+nextButton.disabled =
+number === pages.length - 1;
+
+window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+
+}
+
+
+function nextPage() {
+
+if (currentPage < pages.length - 1) {
+
+showPage(currentPage + 1);
+
+}
+
+}
+
+
+function previousPage() {
+
+if (currentPage > 0) {
+
+showPage(currentPage - 1);
+
+}
+
+}
+
+
+function listenToPage() {
+
+window.speechSynthesis.cancel();
+
+const activePage =
+pages[currentPage];
+
+const text =
+activePage.querySelector(".story-text").innerText;
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.rate = 0.9;
+
+speech.pitch = 1.05;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+showPage(0);
+
+</script>
+
+
+</body>
+
+</html>
