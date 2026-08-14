@@ -19,9 +19,9 @@
     }
 
     header {
-      text-align: center;
-      padding: 28px 20px;
       background: #dfe9dc;
+      padding: 25px;
+      text-align: center;
     }
 
     .logo {
@@ -30,42 +30,64 @@
       color: #315a43;
     }
 
-    .story {
+    .storybook {
       max-width: 850px;
-      margin: 0 auto;
-      padding: 50px 22px 70px;
+      margin: auto;
+      padding: 45px 20px 60px;
     }
 
-    .story-header {
+    .story-page {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .story-page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .story-title {
       text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
-    .story-header h1 {
+    .story-title h1 {
       font-size: 42px;
-      margin: 0 0 12px;
       color: #315a43;
+      margin: 0 0 10px;
     }
 
-    .story-header p {
+    .story-title p {
       font-family: Arial, sans-serif;
       color: #718076;
-      font-size: 15px;
+      margin: 0;
     }
 
     .illustration {
       width: 100%;
-      max-height: 520px;
+      height: 420px;
       object-fit: cover;
-      border-radius: 28px;
       display: block;
-      margin-bottom: 38px;
+      border-radius: 28px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(57, 77, 62, 0.10);
     }
 
     .story-text {
       background: #fffdf8;
-      padding: 35px;
       border-radius: 25px;
+      padding: 30px;
       box-shadow: 0 8px 25px rgba(57, 77, 62, 0.07);
     }
 
@@ -75,43 +97,79 @@
       margin: 0;
     }
 
+    .progress {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #718076;
+      margin: 25px 0 15px;
+    }
+
     .navigation {
       display: flex;
-      justify-content: center;
-      margin-top: 35px;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 25px;
+      gap: 15px;
     }
 
     .button {
+      border: none;
       background: #58775f;
       color: white;
-      border: none;
-      padding: 13px 30px;
+      padding: 13px 25px;
       border-radius: 30px;
       font-family: Arial, sans-serif;
       font-size: 15px;
       cursor: pointer;
     }
 
+    .button.secondary {
+      background: #a9b7a1;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
-      color: #78847b;
+      border-top: 1px solid #e4e1d7;
       font-family: Arial, sans-serif;
       font-size: 13px;
+      color: #78847b;
     }
 
     @media (max-width: 600px) {
 
-      .story-header h1 {
+      .storybook {
+        padding: 35px 16px 50px;
+      }
+
+      .story-title h1 {
         font-size: 34px;
       }
 
+      .illustration {
+        height: 300px;
+        border-radius: 22px;
+      }
+
       .story-text {
-        padding: 25px;
+        padding: 24px;
       }
 
       .story-text p {
         font-size: 18px;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
       }
     }
   </style>
@@ -123,56 +181,134 @@
     <div class="logo">TaleTrail</div>
   </header>
 
-  <main class="story">
 
-    <div class="story-header">
-      <h1>The Ugly Duckling</h1>
-      <p>An illustrated TaleTrail story</p>
-    </div>
+  <main class="storybook">
 
-    <img
-      class="illustration"
-      src="duckling.PNG"
-      alt="The Ugly Duckling beside a peaceful pond"
-    >
-<img
-  class="illustration"
-  src="ugly-duckling-page-2.PNG"
-  alt="The duckling with his mother and siblings in the nest"
->
-    <div class="story-text">
+    <!-- PAGE 1 -->
 
-  <p>
-    The little ducklings began to hatch one after another.
-    Soon the nest was full of cheerful little ducklings.
-    But one egg was larger than the others, and the mother
-    duck waited patiently for it to hatch.
-  </p>
+    <section class="story-page active">
 
-</div>
-    <div class="story-text">
+      <div class="story-title">
+        <h1>The Ugly Duckling</h1>
+        <p>An illustrated story</p>
+      </div>
 
-      <p>
-        It was beautiful in the country; it was summer-time.
-        The wheat was yellow, the oats were green, and the hay
-        was stacked up in the green meadows. A deep lake lay
-        in the midst of the woods, and all around the meadows
-        and cornfields grew thick forests.
-      </p>
+      <img
+        class="illustration"
+        src="duckling.PNG"
+        alt="The Ugly Duckling beside a peaceful pond"
+      >
 
+      <div class="story-text">
+
+        <p>
+          It was beautiful in the country; it was summer-time.
+          The wheat was yellow, the oats were green, and the hay
+          was stacked up in the green meadows. A deep lake lay
+          in the midst of the woods.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PAGE 2 -->
+
+    <section class="story-page">
+
+      <img
+        class="illustration"
+        src="ugly-duckling-page-2.PNG"
+        alt="The mother duck with her ducklings"
+      >
+
+      <div class="story-text">
+
+        <p>
+          The little ducklings began to hatch one after another.
+          Soon the nest was full of cheerful little ducklings.
+          But one egg was larger than the others, and the mother
+          duck waited patiently for it to hatch.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PAGE CONTROLS -->
+
+    <div class="progress">
+      <span id="pageNumber">1</span> / 2
     </div>
 
     <div class="navigation">
-      <button class="button">
+
+      <button
+        class="button secondary"
+        onclick="previousPage()">
+        Previous
+      </button>
+
+      <button
+        class="button"
+        onclick="nextPage()">
         Next
       </button>
+
     </div>
 
   </main>
 
+
   <footer>
     TaleTrail · Stories to listen to, explore and learn from.
   </footer>
+
+
+  <script>
+
+    let currentPage = 0;
+
+    const pages = document.querySelectorAll(".story-page");
+    const pageNumber = document.getElementById("pageNumber");
+
+    function showPage(number) {
+
+      pages.forEach(function(page) {
+        page.classList.remove("active");
+      });
+
+      pages[number].classList.add("active");
+
+      pageNumber.textContent = number + 1;
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    function nextPage() {
+
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+      }
+
+    }
+
+    function previousPage() {
+
+      if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+      }
+
+    }
+
+  </script>
 
 </body>
 </html>
