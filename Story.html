@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>The Ugly Duckling | TaleTrail</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f3e9;
+      color: #304b3b;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 28px 20px;
+      background: #dfe9dc;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #315a43;
+    }
+
+    .story {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 50px 22px 70px;
+    }
+
+    .story-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .story-header h1 {
+      font-size: 42px;
+      margin: 0 0 12px;
+      color: #315a43;
+    }
+
+    .story-header p {
+      font-family: Arial, sans-serif;
+      color: #718076;
+      font-size: 15px;
+    }
+
+    .illustration {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      border-radius: 28px;
+      display: block;
+      margin-bottom: 38px;
+    }
+
+    .story-text {
+      background: #fffdf8;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(57, 77, 62, 0.07);
+    }
+
+    .story-text p {
+      font-size: 20px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      margin-top: 35px;
+    }
+
+    .button {
+      background: #58775f;
+      color: white;
+      border: none;
+      padding: 13px 30px;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #78847b;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      .story-header h1 {
+        font-size: 34px;
+      }
+
+      .story-text {
+        padding: 25px;
+      }
+
+      .story-text p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">TaleTrail</div>
+  </header>
+
+  <main class="story">
+
+    <div class="story-header">
+      <h1>The Ugly Duckling</h1>
+      <p>An illustrated TaleTrail story</p>
+    </div>
+
+    <img
+      class="illustration"
+      src="duckling.PNG"
+      alt="The Ugly Duckling beside a peaceful pond"
+    >
+
+    <div class="story-text">
+
+      <p>
+        It was beautiful in the country; it was summer-time.
+        The wheat was yellow, the oats were green, and the hay
+        was stacked up in the green meadows. A deep lake lay
+        in the midst of the woods, and all around the meadows
+        and cornfields grew thick forests.
+      </p>
+
+    </div>
+
+    <div class="navigation">
+      <button class="button">
+        Next
+      </button>
+    </div>
+
+  </main>
+
+  <footer>
+    TaleTrail · Stories to listen to, explore and learn from.
+  </footer>
+
+</body>
+</html>
